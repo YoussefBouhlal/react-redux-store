@@ -32,8 +32,6 @@ The project is set up to be published at this address:
 https://youssefbouhlal.github.io/react-redux-store/
 ```
 
-**This is the expected address, not a confirmed live website.** If it does not open, the site may not have been published yet. The setup steps below let you run it on your own computer.
-
 Once the shop is open:
 
 1. Browse the catalog or use the search and category filters.
@@ -53,8 +51,6 @@ You need the project files and Node.js, a tool that runs the app's development t
 Supported versions are Node.js 22.12 or later within version 22, version 24, or version 26 and above. The project is configured to use version 22 by default.
 
 Open the `react-redux-store` folder in VS Code, then choose **Terminal > New Terminal**. The terminal is where you type the commands below. Make sure it is open in that folder, not the surrounding WordPress folder.
-
-You do not need WordPress, a database, an account, or an API key to run this app. An internet connection is needed to download the required packages and load product information and photos.
 
 ### 2. Install What the App Needs
 
@@ -149,24 +145,6 @@ npm run preview
 ```
 
 Open the address printed in the terminal, including `/react-redux-store/`. Do not open the generated HTML file directly.
-
-### Publish on GitHub Pages
-
-Publishing makes the demo available online. These steps require permission to manage the GitHub repository.
-
-1. Open the `YoussefBouhlal/react-redux-store` repository on GitHub.
-2. Go to **Settings > Pages**. Under **Build and deployment > Source**, choose **GitHub Actions**. Use a public repository for GitHub Free.
-3. Commit and push the app to the `main` branch, including [.github/workflows/deploy.yml](.github/workflows/deploy.yml). Do not include the surrounding WordPress installation, `node_modules`, or `dist`.
-4. Open **Actions > Deploy to GitHub Pages** and check that it finishes successfully. The workflow tests and builds the app before publishing it. You can also start it manually from Actions.
-5. Open the website address shown in **Settings > Pages**. Test a product page, refresh it, and try the cart and demo checkout.
-
-The app's base path is `/react-redux-store/`. If you rename the repository, update the base path in [vite.config.ts](vite.config.ts). A root or custom-domain deployment should use `/` instead.
-
-The workflow and app have been checked locally. That does not confirm a successful GitHub deployment or publish the site automatically from your computer. GitHub Actions also runs quality checks on pushes and pull requests; check its results in Actions.
-
-### Other Hosting Options
-
-The project also includes [netlify.toml](netlify.toml) for Netlify hosting. For a domain-root deployment there, use `npm run build -- --base=/` and publish the `dist` folder. The Netlify configuration is not used by GitHub Pages, and its security headers apply only on Netlify. Do not apply it to the surrounding WordPress site.
 
 ### Before Using This as a Real Shop
 
