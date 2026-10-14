@@ -4,7 +4,9 @@ import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/store';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const container = document.getElementById('root');
+if (!container) throw new Error('Missing application root');
+const root = ReactDOM.createRoot(container);
 root.render(
 	<React.StrictMode>
 		<Provider store={store}>

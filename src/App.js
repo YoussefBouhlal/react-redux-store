@@ -1,10 +1,9 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 
 import Header from './containers/Header';
 import ProductListing from './containers/ProductListing';
 import ProductDetails from './containers/ProductDetail';
-// import 
 
 function App() {
 	return (
@@ -14,7 +13,13 @@ function App() {
 				<Routes>
 					<Route path="/" element={<ProductListing />} />
 					<Route path="/product/:productId" element={<ProductDetails />} />
-					<Route>404 Not Found</Route>
+					<Route path="*" element={
+						<div className="ui container">
+							<h1>Page not found</h1>
+							<p>The page you requested does not exist.</p>
+							<Link to="/">Back to products</Link>
+						</div>
+					} />
 				</Routes>
 			</BrowserRouter>
 		</div>
